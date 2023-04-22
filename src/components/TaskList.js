@@ -2,13 +2,13 @@ import React, { useState} from "react";
 import axios from "axios";
 
 const TaskList = (props) => {
- const [data, SetData ] = useState(null)
- const [userTasks, SetUserTasks] = useState(null)
+//  const [data, SetData ] = useState(null)
+//  const [userTasks, SetUserTasks] = useState(null)
 
  const deleteTask = async (event) => {
     const token = 'Bearer ' + localStorage.getItem('token')
     console.log(token)
-    const baseUrl = 'https://backendfortasktracker.herokuapp.com/tasks'
+    const baseUrl = `https://backendfortasktracker.herokuapp.com/tasks/${props.id}`
     const headers = { 
     'Content-Type' : 'application/json',
     'Accept' : 'application/json',
