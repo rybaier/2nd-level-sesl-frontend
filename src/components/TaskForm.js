@@ -27,20 +27,22 @@ const TaskForm = (props) => {
     console.log(token);
     const baseUrl = 'https://backendfortasktracker.herokuapp.com/tasks';
     const headers = { 
-        'Content-Type' : 'application/json',
+        // 'Content-Type' : 'application/json',
         // 'Accept' : 'application/json',
         'Authorization' : `${token}`
       }
     console.log(headers);
-    await axios({
+    try  {
+      await axios({
       method: "post",
       url: baseUrl,
       data: newTask,
       headers: headers,
     }).then((res) => console.log(res));
-    // setTimeout(() => {
-    //   window.location.reload(false);
-    // }, 2000);
+    } catch (error){}
+    setTimeout(() => {
+      window.location.reload(false);
+    }, 2000);
   };
 
   return (
@@ -79,7 +81,6 @@ const TaskForm = (props) => {
             {/* <p>
             <strong>Set Due Date</strong>
           </p> */}
-         <button style={{width:'80px', height:'35px', backgroundColor:'#616515', margin:'10px'}}onClick={()=>{addTask()}}>Add New Task</button>
 
           {/* <Zoom in={zoomIn && true}>
             <Fab
@@ -92,6 +93,7 @@ const TaskForm = (props) => {
             </Fab>
           </Zoom> */}
         </form>
+         <button style={{width:'80px', height:'35px', backgroundColor:'#616515', margin:'10px'}}onClick={addTask}>Add New Task</button>
 
       </div>
     </div>
