@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import { useNavigate} from 'react-router-dom'
-import {useDispatch} from 'react-redux'
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 
@@ -10,7 +9,6 @@ export const Dashboard = () => {
     const [userTasks, SetUserTasks] = useState(null)
     // just to see which user is logged in
     const [user,setUser] = useState(localStorage.getItem('user')) 
-    const dispatch = useDispatch()
     const navigate = useNavigate()
     const onHandle =()=>{
      localStorage.clear()
