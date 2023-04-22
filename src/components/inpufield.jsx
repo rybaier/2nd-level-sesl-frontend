@@ -23,6 +23,7 @@ function Inputfield(props) {
           placeholder="Enter Description..."
           rows={zoomIn ? "4" : "1"}
         />
+        
         <p>
           <strong>Set Due Date</strong>
         </p>

@@ -28,7 +28,7 @@ export const Dashboard = () => {
         'Accept' : 'application/json',
         'Authorization' : `${token}`
       }
-      console.log(headers)
+      // console.log(headers)
         await axios({
           method: 'GET',
           url: `${baseUrl}tasks`,
@@ -59,7 +59,7 @@ export const Dashboard = () => {
       <button onClick={onHandle}>Log out</button>
       <TaskForm />
       {userTasks.map((task)=> {
-        console.log(task)
+        // console.log(task)
         return(
           <TaskList key= {task._id} id={task._id} title={task.title} description={task.description} status={task.status} dueDate={task.dueDate}/>
         )
