@@ -42,7 +42,7 @@ const TaskForm = (props) => {
     } catch (error){}
     setTimeout(() => {
       window.location.reload(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (
@@ -78,9 +78,9 @@ const TaskForm = (props) => {
               SetDate(event.target.value);
             }}
           />
-            {/* <p>
+            <p>
             <strong>Set Due Date</strong>
-          </p> */}
+          </p>
 
           {/* <Zoom in={zoomIn && true}>
             <Fab
